@@ -1,0 +1,151 @@
+:root {
+    --background-color: rgb(43, 48, 54);
+    --font-color: rgb(99, 241, 234);
+    --font-family: sans-serif;
+    --warning-color: red;
+    --good-color: rgb(48, 233, 79);
+    --input-color: white;
+    --toast-color: rgba(0, 132, 255, 0.986);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: var(--font-family);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--font-color);
+}
+
+.container {
+    position: relative;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: 55vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#timer, #word-count, #word-input, #chars {
+    margin: 3vh 0;
+}
+
+#word-container {
+    margin: 7vh 0;
+    font-size: 5em;
+    color: var(--good-color);
+}
+
+#timer, #word-count, #word-input, #chars {
+    font-size: 3em;
+}
+
+#word-input {
+    background: none;
+    border-bottom: 0.1vw solid var(--font-color);
+    color: var(--input-color);
+    outline: none;
+    text-align: center;
+}
+
+#restart-button {
+    border: 0.1vw solid var(--font-color);
+    font-size: 2.5em;
+    padding: 0.5vh 1vw;
+    background: none;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+#metrics {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.toast {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    background: var(--toast-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--input-color);
+    font-size: 2em;
+    padding: 2vh 2vw;
+    border-radius: 0.5vw;
+}
+
+.toast_button {
+    border: 0.1vw solid var(--input-color);
+    font-size: 0.7em;
+    padding: 0.2vh 0.4vw;
+    background: none;
+    color: var(--input-color);
+    cursor: pointer;
+    margin-top: 3vh;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .container {
+        width: 80vw;
+    }
+
+    #timer, #word-count, #word-container, #word-input, #chars {
+        margin: 3vh 0;
+    }
+    
+    #timer, #word-count, #word-input, #chars {
+        font-size: 1.4em;
+    }
+    
+    #word-container {
+        font-size: 2.7em;
+        text-align: center;
+    }
+    
+    #word-input {
+        max-width: 90%;
+    }
+    
+    #restart-button {
+        font-size: 1.4em;
+    }
+
+    #metrics {
+        flex-direction: column;
+    }
+
+    .toast {
+        width: 50vw;
+        font-size: 1.1em;
+        padding: 2vh 2vw;
+        border-radius: 1.6vw;
+    }
+    
+    .toast_button {
+        font-size: 0.8em;
+        padding: 0.6vh 0.9vw;
+        margin-top: 3vh;
+    }
+
+}
